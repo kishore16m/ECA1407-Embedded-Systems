@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "ChatGPT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledPump",
+      "top": -90,
+      "left": 220,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledAlarm",
+      "top": 10,
+      "left": 220,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnStart",
+      "top": 130,
+      "left": 210,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnLevel",
+      "top": 220,
+      "left": 210,
+      "attrs": {
+        "color": "green"
+      }
+    }
+  ],
+  "connections": [
+    ["uno:8", "ledPump:A", "green"],
+    ["ledPump:C", "uno:GND.1", "black"],
+
+    ["uno:9", "ledAlarm:A", "green"],
+    ["ledAlarm:C", "uno:GND.2", "black"],
+
+    ["btnStart:1.l", "uno:2", "green"],
+    ["btnStart:2.l", "uno:GND.3", "black"],
+
+    ["btnLevel:1.l", "uno:3", "green"],
+    ["btnLevel:2.l", "uno:GND.4", "black"]
+  ]
+}
